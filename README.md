@@ -11,3 +11,12 @@ i continue to gain more knowledge id be sure to continue modifying the software#
 #Day2 == check
 #Day3 == check
 #Day4 == check
+#Day4 == break
+#Day5 == check
+#Day6 == check
+#Day7 == check
+#Day8 == check
+#Day9 == sick-break
+#Day10 == sick-break
+#Day11 == check
+#Day12 == check
