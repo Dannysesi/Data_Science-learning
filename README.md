@@ -20,3 +20,13 @@ i continue to gain more knowledge id be sure to continue modifying the software#
 #Day10 == sick-break
 #Day11 == check
 #Day12 == check
+#Day13 == check
+#Day14 == sick-break
+#Day15 == Sick-break
+#Day16 == break
+#Day17 == check(no commit)
+#Day18 == check(no commit)
+#Day19 == check
+#Day20 == Check(no commit)
+#Day21 == check(no commit)
+#Day22 == check
