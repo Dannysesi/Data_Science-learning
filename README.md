@@ -30,3 +30,5 @@ i continue to gain more knowledge id be sure to continue modifying the software#
 #Day20 == Check(no commit)
 #Day21 == check(no commit)
 #Day22 == check
+#Day23 == check(no commit)
+#Day24 == check
