@@ -32,3 +32,9 @@ i continue to gain more knowledge id be sure to continue modifying the software#
 #Day22 == check
 #Day23 == check(no commit)
 #Day24 == check
+#Day25 == check
+#Day26 == work revision
+#Day27 == work revision
+#Day28 == check
+#Day29 == final revision
+#Day30 == final revision (check)
