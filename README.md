@@ -38,3 +38,6 @@ i continue to gain more knowledge id be sure to continue modifying the software#
 #Day28 == check
 #Day29 == final revision
 #Day30 == final revision (check)
+
+
+so after 30 of pandas im currently working on building and understanding it and learning how to use it to further better my exploratory data analysis knowlegde and gain more insights from data
