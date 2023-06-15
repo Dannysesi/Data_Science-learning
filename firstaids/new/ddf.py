@@ -1,5 +1,4 @@
 import streamlit as st
-
 import nltk
 nltk.download('punkt')
 from nltk.stem.lancaster import LancasterStemmer
@@ -15,7 +14,7 @@ from tensorflow import keras
 
 with open("intents.json") as file:
 	data = json.load(file)
-	
+
 words = []
 labels = []
 docs_x = []
