@@ -109,19 +109,19 @@
 
         {"tag": "Frost bite",
          "patterns": ["How do you treat a Frost bite?", "what to do if i get a Frost bite?", "Which medicine to take if I get a Frost bite?", "How to cure Frost bite?"],
-         "responses": [" "],
+         "responses": ["To treat frostbite, move to a warm area, remove wet clothing, gently rewarm affected areas with warm water, cover with sterile dressings, and seek medical care for more severe cases"],
          "context_set": ""
         },
 
         {"tag": "Heat Exhaustion",
          "patterns": ["How do you treat Heat Exhaustion?", "what to do if i feel Exhausted due to heat?", "Which medicine to take if I get Exhausted?", "How to cure Heat Exhaustion?"],
-         "responses": [" "],
+         "responses": ["To treat heat exhaustion, move to a cool place, rest, drink plenty of water, apply cool wet cloths to the body, and seek medical assistance if symptoms worsen or do not improve."],
          "context_set": ""
         },
 
         {"tag": "Heat Stroke",
          "patterns": ["How do you treat Heat Stroke?", "what to do if i get a Heat Stroke?", "Which medicine to take if I get Stroke?", "How to cure a Heat Stroke?"],
-         "responses": [" "],
+         "responses": ["To treat heat stroke, call emergency services immediately, move to a cool place, remove excess clothing, cool the body with wet towels or ice packs, and monitor vital signs until help arrives."],
          "context_set": ""
         },
 
@@ -133,85 +133,85 @@
 
         {"tag": "nose bleed",
          "patterns": ["How do you treat a bleeding nose?", "what to do if i my nose is bleeding?", "Which medicine to take if I get nose bleed?", "How to cure nose bleeding?"],
-         "responses": [" "],
+         "responses": ["To treat an insect bite, clean the area with mild soap and water, apply a cold compress to reduce swelling, use over-the-counter hydrocortisone cream or antihistamine to relieve itching, avoid scratching to prevent infection, and consult a doctor if symptoms worsen or allergic reactions occur."],
          "context_set": ""
         },
 
         {"tag": "Pulled Muscle",
          "patterns": ["How do you treat a Pulled Muscle?", "what to do if my muscle is pulled?", "Which medicine to take if I got pulled muscle?", "How to cure a pulled muscle?"],
-         "responses": [" "],
+         "responses": ["To treat a pulled muscle, rest the affected area, apply ice for 20 minutes every few hours to reduce pain and swelling, compress the area with a bandage or wrap, elevate the limb if possible, and take over-the-counter pain relievers as directed."],
          "context_set": ""
         },
 
         {"tag": "Rectal bleeding",
          "patterns": ["How do you treat Rectal Bleeding?", "what to do if i get a Rectal Bleeding?", "Which medicine to take if I get Rectal Bleeding?", "How to cure Rectal Bleeding?"],
-         "responses": [" "],
+         "responses": ["To treat rectal bleeding, seek medical attention immediately to determine the underlying cause, avoid straining during bowel movements, maintain good hygiene, apply a cold compress to reduce bleeding and swelling, and refrain from inserting anything into the rectum until evaluated by a healthcare professional."],
          "context_set": ""
         },
 
         {"tag": "Sun Burn",
          "patterns": ["How do you treat Sun Burn?", "what to do if i get a Sun Burn?", "Which medicine to take if I get Sun Burn?", "How to cure a Sun Burn?"],
-         "responses": [" "],
+         "responses": ["To treat sunburn, cool the affected area with a cold shower or damp cloth, apply aloe vera gel or moisturizing lotion to soothe the skin, take over-the-counter pain relievers, drink plenty of water, and avoid further sun exposure until the skin has healed."],
          "context_set": ""
         },
 
         {"tag": "Testicle Pain",
          "patterns": ["How do you treat Testicle Pain?", "what to do if i get a Testicle Pain?", "Which medicine to take if I get a Testicle Pain?", "How to cure Testicle Pain?"],
-         "responses": [" "],
+         "responses": ["To treat testicle pain, seek medical attention to determine the cause, rest and avoid strenuous activities, apply a cold pack or towel wrapped in ice to the affected area, wear supportive underwear, and avoid tight clothing or activities that worsen the pain until evaluated by a healthcare professional."],
          "context_set": ""
         },
 
         {"tag": "Vertigo",
          "patterns": ["How do you treat a Vertigo?", "what to do if i get a Vertigo?", "Which medicine to take if I get Vertigo?", "How to cure a Vertigo?"],
-         "responses": [" "],
+         "responses": ["If experiencing vertigo, sit or lie down in a safe place, avoid sudden head movements, focus on a stationary object, breathe deeply and slowly, try gentle head and neck exercises, avoid bright lights and screens, and consult a healthcare professional for proper diagnosis and treatment."],
          "context_set": ""
         },
 
         {"tag": "Normal Bleeding",
          "patterns": ["How do you treat bleeding?", "what to do if i get a Bleeding?", "Which medicine to take if I get bleeding?", "How to cure Bleeding?"],
-         "responses": [" "],
+         "responses": ["To treat bleeding, apply direct pressure to the wound using a clean cloth or your hand, elevate the injured area if possible, maintain pressure for at least 10 minutes, if bleeding continues, apply additional dressings, and seek immediate medical attention if the bleeding is severe, does not stop, or if there is excessive blood loss."],
          "context_set": ""
         },
 
         {"tag": "Eye Injury",
          "patterns": ["How do you treat an eye Injury?", "what to do if i get a eye Injury?", "Which medicine to take if I injured my eye?", "How to cure injured eye?"],
-         "responses": [" "],
+         "responses": ["If you sustain an eye injury, do not rub or apply pressure. Gently rinse the eye with clean water if it's contaminated. Place a sterile bandage or shield over the eye, and seek immediate medical help. Avoid taking any medication or applying ointments without professional guidance."],
          "context_set": ""
         },
 
         {"tag": "Chemical Burn",
          "patterns": ["How do you treat a chemical burn?", "what to do if i get a Chemical Burn?", "Which medicine to take if I get burn due to chemicals?", "How to cure Chemical Burn?"],
-         "responses": [" "],
+         "responses": ["To treat a chemical burn, remove any contaminated clothing and flush the affected area with large amounts of running water for at least 20 minutes. Avoid using neutralizing agents. Cover the burn with a clean, non-stick dressing and seek immediate medical attention for further evaluation and treatment."],
          "context_set": ""
         },
 
         {"tag": "Poison",
          "patterns": ["How do you treat a Poison?", "what to do if i get Poison?", "Which medicine to take if I am poisoned?", "How to cure Poisoning?"],
-         "responses": [" "],
+         "responses": ["In case of poisoning, immediately call emergency services. If the person is conscious, gather information about the substance ingested. Do not induce vomiting unless instructed. Provide comfort, monitor vital signs, and follow medical instructions until professional help arrives."],
          "context_set": ""
         },
 
         {"tag": "Teeth",
          "patterns": ["How do you treat broken Teeth ?", "what to do if my Teeth got broken?", "Which medicine to take if I get broken teeth?", "cure broken teeth?"],
-         "responses": [" "],
+         "responses": ["To treat a broken tooth, rinse the mouth with warm water, apply a cold compress to reduce swelling, take over-the-counter pain relievers, and see a dentist immediately. If a piece of the tooth is available, keep it moist and bring it to the dentist."],
          "context_set": ""
         },
 
         {"tag": "seizure",
          "patterns": ["How do you treat a seizure?", "what to do if i get a seizure?", "Which medicine to take if I get seizure?", "How to cure seizure?"],
-         "responses": [" "],
+         "responses": ["During a seizure, ensure the person's safety by clearing the area of any hazards. Protect their head with a soft object. Do not restrain them. Once the seizure stops, place them in the recovery position, monitor their breathing, and seek medical assistance if necessary."],
          "context_set": ""
         },
 
         {"tag": "Head Injury",
          "patterns": ["How do you treat a head Injury?", "what to do if i get a Head Injury?", "Which medicine to take if I get injured in the head?", "How to cure Head Injury?"],
-         "responses": [" "],
+         "responses": ["If someone has a head injury, call emergency services. Keep them still and apply firm, gentle pressure on any bleeding. Do not remove any objects stuck in the wound. Keep their head and neck stable and monitor their breathing and consciousness level until help arrives."],
          "context_set": ""
         },
 
         {"tag": "Fainting",
          "patterns": ["How do you treat Faint?", "what to do if i feel like Fainting?", "Which medicine to take if I get a Faint?", "How to cure Fainting?"],
-         "responses": [" "],
+         "responses": ["If someone faints, ensure their safety by laying them down on their back. Elevate their legs if possible. Loosen any tight clothing around their neck and chest. Check their breathing and pulse. If they do not regain consciousness, call emergency services."],
          "context_set": ""
         },
 
