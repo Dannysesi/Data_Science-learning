@@ -96,29 +96,30 @@ def bag_of_words(s,words):
 
 from requests import Response
 
-
+unique_key = 0
 def chat():
+	unique_key = 0
 	st.title("HI I'm your first aid chatbot assistant")
-	while True:
-		inp = st.text_input("You: ", key='my_unique_key')
-		if inp.lower() == "quit":
-			break
+	st.write('---')
+	# while True:
+	inp = st.text_input("You: ", key=unique_key, placeholder='Enter Your First Aid Prompt')
+	# unique_key <= 1
+	# if inp.lower() == "quit":
+	results = model.predict([bag_of_words(inp,words)])[0]
+	results_index = numpy.argmax(results)
+	tag = labels[results_index]
 
-		results = model.predict([bag_of_words(inp,words)])[0]
-		results_index = numpy.argmax(results)
-		tag = labels[results_index]
+	if results[results_index] > 0.5:
+		for tg in data["intents"]:
+			if tg['tag'] == tag:
+				responses = tg['responses']
+		st.write(random.choice(responses))
+		print("\n")
+	else:
+		st.write("I didnt get that, try again")
 
-		if results[results_index] > 0.5:
-			for tg in data["intents"]:
-				if tg['tag'] == tag:
-					responses = tg['responses']
-			st.write(random.choice(responses))
-			print("\n")
-		else:
-			st.write("I didnt get that, try again")
-
-
-chat()
+if __name__ == '__main__':
+	chat()
 
 # def main():
 #     st.title('Chatbot')
