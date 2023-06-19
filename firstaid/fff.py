@@ -96,10 +96,14 @@ def bag_of_words(s,words):
 
 from requests import Response
 
+
+# st.set_page_config(layout="wide")
+
+
 unique_key = 0
 def chat():
 	unique_key = 0
-	st.title("HI I'm your first aid chatbot assistant")
+	st.title("First Aid Chatbot Assistant")
 	st.write('---')
 	# while True:
 	inp = st.text_input("You: ", key=unique_key, placeholder='Enter Your First Aid Prompt')
@@ -113,7 +117,7 @@ def chat():
 		for tg in data["intents"]:
 			if tg['tag'] == tag:
 				responses = tg['responses']
-		st.write(random.choice(responses))
+		st.markdown(random.choice(responses))
 		print("\n")
 	else:
 		st.write("I didnt get that, try again")
@@ -121,25 +125,10 @@ def chat():
 if __name__ == '__main__':
 	chat()
 
-# def main():
-#     st.title('Chatbot')
+# import streamlit as st
 
-#     # Get user input
-
-
-#     # Generate response using the chatbot model
-#     response = model.predict(prompt)
-
-#     # Display the response
-#     st.text_area('Chatbot Response', response)
+# st.set_page_config(layout="wide")
 
 
 
-# st.title('First Aid Recommendation system')
-# st.write('---')
-
-# prompt = st.text_input('enter your prompt')
-
-# st.write(prompt)
-
-# st.write()
+# st.markdown('<p class="big-font">Hello World !!</p>', unsafe_allow_html=True)
