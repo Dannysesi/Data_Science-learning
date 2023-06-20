@@ -10,7 +10,7 @@ import random
 import json
 import pickle
 
-with open("intents.json") as file:
+with open("intents.json") as file: # type: ignore
 	data = json.load(file)
 
 
@@ -103,10 +103,10 @@ from requests import Response
 unique_key = 0
 def chat():
 	unique_key = 0
-	st.title("First Aid Chatbot Assistant")
+	st.title("First Aid Chatbot Assistant🤖")
 	st.write('---')
 	# while True:
-	inp = st.text_input("You: ", key=unique_key, placeholder='Enter Your First Aid Prompt')
+	inp = st.text_input("You🧔‍♂️: ", key=unique_key, placeholder='Enter Your First Aid Prompt💭')
 	# unique_key <= 1
 	# if inp.lower() == "quit":
 	results = model.predict([bag_of_words(inp,words)])[0]
@@ -117,18 +117,13 @@ def chat():
 		for tg in data["intents"]:
 			if tg['tag'] == tag:
 				responses = tg['responses']
+				st.write('Chabot🤖: ')
 				st.markdown(random.choice(responses))
 				print("\n")
-			else:
-				st.write("I didnt get that, try again")
+				break
+	else:
+		st.write('Chabot🤖: ')
+		st.markdown("I didnt get that, try again")
 
 if __name__ == '__main__':
 	chat()
-
-# import streamlit as st
-
-# st.set_page_config(layout="wide")
-
-
-
-# st.markdown('<p class="big-font">Hello World !!</p>', unsafe_allow_html=True)
