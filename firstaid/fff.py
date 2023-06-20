@@ -117,10 +117,10 @@ def chat():
 		for tg in data["intents"]:
 			if tg['tag'] == tag:
 				responses = tg['responses']
-		st.markdown(random.choice(responses))
-		print("\n")
-	else:
-		st.write("I didnt get that, try again")
+				st.markdown(random.choice(responses))
+				print("\n")
+			else:
+				st.write("I didnt get that, try again")
 
 if __name__ == '__main__':
 	chat()
