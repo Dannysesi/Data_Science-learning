@@ -99,6 +99,13 @@ from requests import Response
 
 # st.set_page_config(layout="wide")
 
+import time, sys
+
+def typingPrint(text):
+	for characters in text:
+		st.write(characters)
+		# sys.stdout.flush()
+		time.sleep(0.05)
 
 unique_key = 0
 def chat():
