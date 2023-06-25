@@ -99,13 +99,23 @@ from requests import Response
 
 # st.set_page_config(layout="wide")
 
-import time, sys
+import time
 
-def typingPrint(text):
-	for characters in text:
-		st.write(characters)
-		# sys.stdout.flush()
-		time.sleep(0.05)
+# def typingPrint(text):
+# 	for characters in text:
+# 		st.write(characters)
+# 		# sys.stdout.flush()
+# 		time.sleep(0.05)
+
+def typewriter_effect(text):
+    # Create an empty slot to display the text
+    # text_slot = st.empty()
+    # Iterate over each character in the text
+    for char in text:
+        # Add the current character to the text_slot
+        st.write(char, end='', flush=True)
+        # Pause for a short duration to create the typewriter effect
+        time.sleep(0.05)
 
 unique_key = 0
 def chat():
@@ -125,7 +135,7 @@ def chat():
 			if tg['tag'] == tag:
 				responses = tg['responses']
 				st.write('Chabot🤖: ')
-				st.markdown(random.choice(responses))
+				typewriter_effect(responses)
 				print("\n")
 				break
 	else:
