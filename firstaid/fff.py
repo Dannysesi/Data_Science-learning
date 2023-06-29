@@ -97,9 +97,6 @@ def bag_of_words(s,words):
 from requests import Response
 
 
-# st.set_page_config(layout="wide")
-
-
 
 unique_key = 0
 def chat():
@@ -122,9 +119,9 @@ def chat():
 				st.markdown(responses)
 				print("\n")
 				break
-	else:
-		st.write('Chabot🤖: ')
-		st.markdown("I didnt get that, try again")
+			else:
+				st.write('Chabot🤖: ')
+				st.markdown("I didnt get that, try again")
 
 if __name__ == '__main__':
 	chat()
