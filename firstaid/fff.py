@@ -110,6 +110,7 @@ def chat():
 	results = model.predict([bag_of_words(inp,words)])[0]
 	results_index = numpy.argmax(results)
 	tag = labels[results_index]
+	dail = 902_562_9246
 
 	if results[results_index] > 0.5:
 		for tg in data["intents"]:
@@ -122,6 +123,7 @@ def chat():
 			else:
 				st.write('Chabot🤖: ')
 				st.markdown("I didnt get that, try again")
+	st.write(f'For more information please contact {dail}')
 
 if __name__ == '__main__':
 	chat()
