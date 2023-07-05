@@ -104,14 +104,18 @@ def chat():
 	st.title("First Aid Chatbot Assistant🤖")
 	st.write('---')
 	# while True:
-	inp = st.text_input("You🧔‍♂️: ", key=unique_key, placeholder='Enter Your First Aid Prompt💭')
-	# unique_key <= 1
-	# if inp.lower() == "quit":
-	results = model.predict([bag_of_words(inp,words)])[0]
-	results_index = numpy.argmax(results)
-	tag = labels[results_index]
-	dail = 902_562_9246
+	with st.form("chat_input", clear_on_submit=True):
+		a, b = st.columns([4, 1])
+		inp = a.text_input("User_Input: ", key=unique_key, placeholder='Enter Your First Aid Prompt💭', label_visibility="collapsed")
+		# unique_key <= 1
+		# if inp.lower() == "quit":
+		results = model.predict([bag_of_words(inp,words)])[0]
+		results_index = numpy.argmax(results)
+		tag = labels[results_index]
+		dail = '+2349025629246'
+		b.form_submit_button("Send", use_container_width=True)
 
+	
 	if results[results_index] > 0.5:
 		for tg in data["intents"]:
 			if tg['tag'] == tag:
@@ -120,9 +124,10 @@ def chat():
 				st.markdown(responses)
 				print("\n")
 				break
-			else:
-				st.write('Chabot🤖: ')
-				st.markdown("I didnt get that, try again")
+		else:
+			st.markdown("I didnt get that, try again")
+	else:
+		st.markdown("Sorry I didn't get that")		
 	st.write(f'For more information please contact {dail}')
 
 if __name__ == '__main__':
