@@ -9,6 +9,7 @@ import tensorflow
 import random
 import json
 import pickle
+import time
 
 with open("intents.json") as file: # type: ignore
 	data = json.load(file)
@@ -103,7 +104,16 @@ def chat():
 	unique_key = 0
 	st.title("First Aid Chatbot Assistant🤖")
 	st.write('---')
-	# while True:
+	# Initialize chat history
+	# if "messages" not in st.session_state:
+	# 	st.session_state.messages = []
+
+	# # Display chat messages from history on app rerun
+	# for message in st.session_state.messages:
+	# 	with st.chat_message(message["role"]):
+	# 		st.markdown(message["content"])
+
+	# Accepting user input
 	with st.form("chat_input", clear_on_submit=True):
 		a, b = st.columns([4, 1])
 		inp = a.text_input("User_Input: ", key=unique_key, placeholder='Enter Your First Aid Prompt💭', label_visibility="collapsed")
@@ -114,21 +124,34 @@ def chat():
 		tag = labels[results_index]
 		dail = '+2349025629246'
 		b.form_submit_button("Send", use_container_width=True)
+		# st.session_state.messages.append({"role": "user", "content": inp})
 
-	
+	# Processing bots response
 	if results[results_index] > 0.5:
 		for tg in data["intents"]:
 			if tg['tag'] == tag:
 				responses = tg['responses']
-				st.write('Chabot🤖: ')
-				st.markdown(responses)
-				print("\n")
-				break
-		else:
-			st.markdown("I didnt get that, try again")
-	else:
-		st.markdown("Sorry I didn't get that")		
+			# else:
+			# 	responses = "Sorry I didn't get that"
+		with st.chat_message("assistant"):
+			message_placeholder = st.empty()
+			full_resp = ""
+			resp = random.choice(responses)
+			for chunk in resp.split():
+				full_resp += chunk + " "
+				time.sleep(0.05)
+        		# Add a blinking cursor to simulate typing
+				message_placeholder.markdown(full_resp + "▌")
+			print("\n")
+		
+	# else:
+	# 	st.markdown("Sorry I didn't get that")		
 	st.write(f'For more information please contact {dail}')
+
+	
 
 if __name__ == '__main__':
 	chat()
+
+	
+
