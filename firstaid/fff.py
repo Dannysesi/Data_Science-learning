@@ -104,14 +104,6 @@ def chat():
 	unique_key = 0
 	st.title("First Aid Chatbot Assistant🤖")
 	st.write('---')
-	# Initialize chat history
-	# if "messages" not in st.session_state:
-	# 	st.session_state.messages = []
-
-	# # Display chat messages from history on app rerun
-	# for message in st.session_state.messages:
-	# 	with st.chat_message(message["role"]):
-	# 		st.markdown(message["content"])
 
 	# Accepting user input
 	with st.form("chat_input", clear_on_submit=True):
@@ -124,15 +116,12 @@ def chat():
 		tag = labels[results_index]
 		dail = '+2349025629246'
 		b.form_submit_button("Send", use_container_width=True)
-		# st.session_state.messages.append({"role": "user", "content": inp})
 
 	# Processing bots response
 	if results[results_index] > 0.5:
 		for tg in data["intents"]:
 			if tg['tag'] == tag:
 				responses = tg['responses']
-			# else:
-			# 	responses = "Sorry I didn't get that"
 		with st.chat_message("assistant"):
 			message_placeholder = st.empty()
 			full_resp = ""
