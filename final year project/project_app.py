@@ -60,7 +60,7 @@ a, b, c, d = st.columns([4, 4, 4, 4])
 crim = a.number_input('Crime rate', min_value=0.0, max_value=100.0,  step=1.0)
 zn = b.number_input('Land size per plot', min_value=0.0, max_value=100.0,  step=1.0)
 indus = c.number_input('Avg no. of Bathrooms', min_value=0.0, max_value=30.0,  step=1.0)
-chas = d.selectbox('CHAS', [0, 1])
+chas = d.selectbox('Charles River', [0, 1])
 i, j = st.columns([4,4])
 nox = i.slider('Air condition', min_value=0.0, max_value=1.0, value=0.0, step=0.01)
 rm = j.slider('Avg no. of Bedrooms', min_value=0.0, max_value=10.0, value=0.0, step=0.5)
@@ -73,7 +73,7 @@ tax = m.number_input('Property tax', min_value=0.0, max_value=750.0, value=0.0, 
 ptratio = n.slider('Pupil-teacher ratio by town', min_value=0.0, max_value=25.0, value=0.0, step=1.0)
 q, r = st.columns([4,4])
 b = q.number_input('B', min_value=0.0, max_value=400.0, value=0.0, step=1.0)
-lstat = r.slider('LSTAT', min_value=0.0, max_value=40.0, value=0.0, step=0.5)
+lstat = r.slider('% lower status of the population', min_value=0.0, max_value=40.0, value=0.0, step=0.5)
 
 # When the user clicks the "Predict" button, make a prediction
 st.write('---')
