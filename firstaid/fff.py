@@ -106,16 +106,17 @@ def chat():
 	st.write('---')
 
 	# Accepting user input
-	with st.form("chat_input", clear_on_submit=True):
-		a, b = st.columns([4, 1])
-		inp = a.text_input("User_Input: ", key=unique_key, placeholder='Enter Your First Aid Prompt💭', label_visibility="collapsed")
+	inp = st.chat_input(key=unique_key, placeholder='Enter Your First Aid Prompt💭',)
+	with st.chat_message("user"):
+		# a, b = st.columns([4, 1])
+		
 		# unique_key <= 1
 		# if inp.lower() == "quit":
 		results = model.predict([bag_of_words(inp,words)])[0]
 		results_index = numpy.argmax(results)
 		tag = labels[results_index]
 		dail = '+2349025629246'
-		b.form_submit_button("Send", use_container_width=True)
+		# b.form_submit_button("Send", use_container_width=True)
 
 	# Processing bots response
 	if results[results_index] > 0.5:
@@ -133,8 +134,8 @@ def chat():
 				message_placeholder.markdown(full_resp + "▌")
 			print("\n")
 		
-	# else:
-	# 	st.markdown("Sorry I didn't get that")		
+	else:
+		st.markdown("Sorry I didn't get that")		
 	st.write(f'For more information please contact {dail}')
 
 	
