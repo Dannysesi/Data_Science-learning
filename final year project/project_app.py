@@ -15,7 +15,13 @@ with open('model3.pkl', 'rb') as f:
 def preprocess_input(inputs):
     # Convert the user input to a dataframe
     input_df = pd.DataFrame(inputs, index=[0])
+
     return input_df
+
+# splitting the data for shap plotting
+features = df.drop('MEDV', axis = 1)
+X = features
+y = df['MEDV']
 
 # Create a function to make a prediction
 def predict_price(inputs):
@@ -92,4 +98,28 @@ if col2.button('Predict'):
     st.write('---')
     st.write('The predicted house price is $', round(medv_con(prediction), 2))
     st.write('House Price in local currency (Naira) is ₦', round(convert(medv_con(prediction)), 3))
+    st.write('---')
 
+    explainer = shap.TreeExplainer(model)
+    shap_values = explainer.shap_values(X)
+
+    # st.header('Feature Importance')
+    # # plt.title('Feature importance based on SHAP values')
+    # shap.summary_plot(shap_values, X)
+    # fig = plt.gcf()
+    # st.pyplot(fig, bbox_inches='tight')
+    # # st.write('---')
+
+    # # plt.title('Feature importance based on SHAP values (Bar)')
+    # shap.summary_plot(shap_values, X, plot_type="bar")
+    # fig = plt.gcf()
+    # st.pyplot(fig, bbox_inches='tight')
+    st.header('Feature Importance')
+    fig, ax = plt.subplots()
+    shap.summary_plot(shap_values, X)
+    st.pyplot(fig)
+
+
+    fig, ax = plt.subplots()
+    shap.summary_plot(shap_values, X, plot_type='bar')
+    st.pyplot(fig)
