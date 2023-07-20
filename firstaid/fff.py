@@ -105,6 +105,11 @@ def chat():
 	st.title("First Aid Chatbot Assistant🤖")
 	st.write('---')
 
+	if "messages" not in st.session_state:
+		st.session_state.messages = []
+
+	
+
 	# Accepting user input
 	inp = st.chat_input(key=unique_key, placeholder='Enter Your First Aid Prompt💭',)
 	with st.chat_message("user"):
@@ -117,6 +122,7 @@ def chat():
 		tag = labels[results_index]
 		dail = '+2349025629246'
 		# b.form_submit_button("Send", use_container_width=True)
+		st.session_state.messages.append({"role": "user", "content": inp})
 
 	# Processing bots response
 	if results[results_index] > 0.5:
@@ -132,16 +138,24 @@ def chat():
 				time.sleep(0.05)
         		# Add a blinking cursor to simulate typing
 				message_placeholder.markdown(full_resp + "▌")
+				st.session_state.messages.append({"role": "assistant", "content": full_resp})
 			print("\n")
 		
 	else:
 		st.markdown("Sorry I didn't get that")		
 	st.write(f'For more information please contact {dail}')
 
+	for message in st.session_state.messages:
+		with st.chat_message(message["role"]):
+			st.markdown(message["content"])
 	
 
-if __name__ == '__main__':
-	chat()
+	
+
+# if __name__ == '__main__':
+# 	chat()
+
+chat()
 
 	
 
