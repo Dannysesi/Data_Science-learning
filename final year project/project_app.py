@@ -96,30 +96,31 @@ if col2.button('Predict'):
     
     # Display the prediction to the user
     st.write('---')
-    st.write('The predicted house price is $', round(medv_con(prediction), 2))
-    st.write('House Price in local currency (Naira) is ₦', round(convert(medv_con(prediction)), 3))
+    st.write("<span style='font-size: 30px;'>The predicted house price is $</span>", round(medv_con(prediction), 2), unsafe_allow_html=True)
+    st.write("<span style='font-size: 30px;'>House Price in local currency (Naira) is ₦</span>",
+        round(convert(medv_con(prediction)), 3),
+        unsafe_allow_html=True)
     st.write('---')
+    
 
     explainer = shap.TreeExplainer(model)
     shap_values = explainer.shap_values(X)
 
     # st.header('Feature Importance')
     # # plt.title('Feature importance based on SHAP values')
-    # shap.summary_plot(shap_values, X)
-    # fig = plt.gcf()
-    # st.pyplot(fig, bbox_inches='tight')
-    # # st.write('---')
+    
 
     # # plt.title('Feature importance based on SHAP values (Bar)')
     # shap.summary_plot(shap_values, X, plot_type="bar")
     # fig = plt.gcf()
     # st.pyplot(fig, bbox_inches='tight')
     st.header('Feature Importance')
+    plt.title('Feature importance based on SHAP values')
     fig, ax = plt.subplots()
     shap.summary_plot(shap_values, X)
     st.pyplot(fig)
 
-
+    plt.title('Feature importance based on SHAP values (Bar)')
     fig, ax = plt.subplots()
     shap.summary_plot(shap_values, X, plot_type='bar')
     st.pyplot(fig)
