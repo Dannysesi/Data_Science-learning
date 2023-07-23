@@ -138,7 +138,9 @@ def chat():
 				st.session_state.messages.append({"role": "assistant", "content": full_resp})
 				print("\n")
 		else:
-			st.markdown("Sorry I didn't get that")	
+			z = "Sorry I didn't get that please make a vaild prompt"
+			st.write("Sorry I didn't get that please make a vaild prompt")
+			st.session_state.messages.append({"role": "assistant", "content": z})
 	st.write('---')	
 	st.write(f'For more information please contact {dail}')
 	st.write('---')
