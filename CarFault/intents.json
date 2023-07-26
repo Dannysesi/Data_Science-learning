@@ -1,0 +1,11 @@
+{"intents": [
+    {"tag": "Engine misfiring",
+    "patterns": ["Rough idling", "sluggish acceleration", "engine sound change", "black exhaust", "vibration"],
+    "responses": ["Check The Spark Plug: Pop up the hood and have a look at the spark plug. If it is black, clean it with a brush and test again. \n Change The Spark Plug: If the car does not start after cleaning, then you will need to change the spark plug. It is not a costly component and can be changed without much expenditure. \n Consult A Mechanic: If the misfire happens even after replacing the spark plug, then we would recommend that you get your car checked by a skilled engine mechanic as the problem could be related to the cylinder or piston head."],
+    "context_set": ""
+    }
+
+
+]
+
+}
