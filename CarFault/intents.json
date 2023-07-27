@@ -1,7 +1,31 @@
 {"intents": [
     {"tag": "Engine misfiring",
-    "patterns": ["Rough idling", "sluggish acceleration", "engine sound change", "black exhaust", "vibration"],
-    "responses": ["Check The Spark Plug: Pop up the hood and have a look at the spark plug. If it is black, clean it with a brush and test again. \n Change The Spark Plug: If the car does not start after cleaning, then you will need to change the spark plug. It is not a costly component and can be changed without much expenditure. \n Consult A Mechanic: If the misfire happens even after replacing the spark plug, then we would recommend that you get your car checked by a skilled engine mechanic as the problem could be related to the cylinder or piston head."],
+    "patterns": ["rough idling", "sluggish acceleration", "engine sound change", "black exhaust", "vibration"],
+    "responses": ["Check The Spark Plug: Pop up the hood and have a look at the spark plug. If it is black, clean it with a brush and test again. \nChange The Spark Plug: If the car does not start after cleaning, then you will need to change the spark plug. It is not a costly component and can be changed without much expenditure. \nConsult A Mechanic: If the misfire happens even after replacing the spark plug, then we would recommend that you get your car checked by a skilled engine mechanic as the problem could be related to the cylinder or piston head."],
+    "context_set": ""
+    },
+
+    {"tag": "Dead battery",
+    "patterns": ["no response at ignition", "the starter motor cranks but the engine won't turn over", "The Engine Starts but Then Dies Immediately", "No Door Chime or Dome Lights", "The Check Engine Light Turns On"],
+    "responses": ["Jump Start: Jump starting is the most common solution for a dead car battery. If you do not have a portable jump starter handy, you will need another running vehicle to act as the donor car and jumper cables to do this.\nCheck Battery Fluid: If your battery works only by jump starting, it would be a good idea to get it checked as there could be fluid loss in the battery.\nReplace The Battery: If your battery does not respond to a jump at all, then it is time to install a new battery.\nCheck The Charging System: If you've got a battery in good condition and it does not get charged, then there is an issue with the charging system, which needs the intervention of a skilled mechanic"],
+    "context_set": ""
+    },
+
+    {"tag": "OVERHEATING ENGINE",
+    "patterns": ["Hot Hood", "Smoke or Steam", "Thumping Noises", "Reduced Engine Power", "Temperature Gauge is Red"],
+    "responses": ["Check the coolant level and add more coolant if needed\nCheck the engine oil and add more oil if needed\nCheck the radiator:  The radiator consists of a fan and some pipes, The radiator fan fails and sometimes it just runs out of water. You may refill it, and if the fan is not working, then call your mechanic right away."],
+    "context_set": ""
+    },
+
+    {"tag": "Engine oil change",
+    "patterns": ["Due for service on the dashboard", "Wear and tear in the engine"],
+    "responses":["Floor jack to lift the vehicle\nOpen draining tank to drain out the oil\nReplace the filter \nRefill the oil according to the qauge"],
+    "context_set": ""
+    },
+
+    {"tag": "Bad Break pad",
+    "patterns": ["Break fluid reservoir", "Break light on dashboard"],
+    "responses": ["Meet an expert to change the break pad"],
     "context_set": ""
     }
 
