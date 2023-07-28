@@ -11,7 +11,7 @@ import json
 import pickle
 import time
 
-with open("intents.json") as file: # type: ignore
+with open("intents.json") as file:
 	data = json.load(file)
 
 
@@ -122,21 +122,36 @@ def chat():
 		dail = '+2349025629246'
 		b.form_submit_button("Send", use_container_width=True)
 		st.session_state.messages.append({"role": "user", "content": inp})
+
+		def typewriter_effect(text):
+			for char in text:
+				st.text(char)
+				time.sleep(0.1)
         
 		if results[results_index] > 0.5:
 			for tg in data["intents"]:
 				if tg['tag'] == tag:
 					responses = tg['responses']
+			# with st.chat_message("assistant"):
+			# 	message_placeholder = st.empty()
+			# 	full_resp = ""
+			# 	resp = random.choice(responses)
+			# 	for chunk in resp.split():
+			# 		full_resp += chunk + " "
+			# 		time.sleep(0.05)
+			# 		message_placeholder.markdown(full_resp + "▌")
+			# 	st.session_state.messages.append({"role": "assistant", "content": full_resp})
+			# 	print("\n")
 			with st.chat_message("assistant"):
-				message_placeholder = st.empty()
-				full_resp = ""
+				# mp = st.empty()
+				# full_resp = ""
 				resp = random.choice(responses)
-				for chunk in resp.split():
-					full_resp += chunk + " "
-					time.sleep(0.05)
-					message_placeholder.markdown(full_resp + "▌")
-				st.session_state.messages.append({"role": "assistant", "content": full_resp})
-				print("\n")
+				# for chunk in resp.split():
+				# 	full_resp += chunk + " "
+				# 	time.sleep(0.05)
+				st.markdown(resp + "▌")
+				st.markdown("\n")
+				st.session_state.messages.append({"role": "assistant", "content": resp})
 		else:
 			z = "Sorry I didn't get that please make a vaild prompt"
 			st.write("Sorry I didn't get that please make a vaild prompt")
