@@ -1,35 +1,75 @@
 {"intents": [
-    {"tag": "Engine misfiring",
-    "patterns": ["rough idling", "sluggish acceleration", "engine sound change", "black exhaust", "vibration"],
-    "responses": ["Check The Spark Plug: Pop up the hood and have a look at the spark plug. If it is black, clean it with a brush and test again. \nChange The Spark Plug: If the car does not start after cleaning, then you will need to change the spark plug. It is not a costly component and can be changed without much expenditure. \nConsult A Mechanic: If the misfire happens even after replacing the spark plug, then we would recommend that you get your car checked by a skilled engine mechanic as the problem could be related to the cylinder or piston head."],
-    "context_set": ""
-    },
+        {"tag": "ENGINE MISFIRING",
+        "patterns": ["rough idling", "my car is sluggishly accelerating", "engine sound change", "my car is removing black smkoe from the exhaust", "my car is vibrating"],
+        "responses": ["Check The Spark Plug: Pop up the hood and have a look at the spark plug. If it is black, clean it with a brush and test again. \nChange The Spark Plug: If the car does not start after cleaning, then you will need to change the spark plug. It is not a costly component and can be changed without much expenditure. \nConsult A Mechanic: If the misfire happens even after replacing the spark plug, then we would recommend that you get your car checked by a skilled engine mechanic as the problem could be related to the cylinder or piston head."],
+        "context_set": ""
+        },
 
-    {"tag": "Dead battery",
-    "patterns": ["no response at ignition", "the starter motor cranks but the engine won't turn over", "The Engine Starts but Then Dies Immediately", "No Door Chime or Dome Lights", "The Check Engine Light Turns On"],
-    "responses": ["Jump Start: Jump starting is the most common solution for a dead car battery. If you do not have a portable jump starter handy, you will need another running vehicle to act as the donor car and jumper cables to do this.\nCheck Battery Fluid: If your battery works only by jump starting, it would be a good idea to get it checked as there could be fluid loss in the battery.\nReplace The Battery: If your battery does not respond to a jump at all, then it is time to install a new battery.\nCheck The Charging System: If you've got a battery in good condition and it does not get charged, then there is an issue with the charging system, which needs the intervention of a skilled mechanic"],
-    "context_set": ""
-    },
+        {"tag": "DEAD BATTERY",
+        "patterns": ["no response at ignition", "clicking noise when trying to start", "my engine starts but then dies immediately", "battery warning lights is on", "my car won't start"],
+        "responses": ["Jump Start: Jump starting is the most common solution for a dead car battery. If you do not have a portable jump starter handy, you will need another running vehicle to act as the donor car and jumper cables to do this.\nCheck Battery Fluid: If your battery works only by jump starting, it would be a good idea to get it checked as there could be fluid loss in the battery.\nReplace The Battery: If your battery does not respond to a jump at all, then it is time to install a new battery.\nCheck The Charging System: If you've got a battery in good condition and it does not get charged, then there is an issue with the charging system, which needs the intervention of a skilled mechanic"],
+        "context_set": ""
+        },
 
-    {"tag": "OVERHEATING ENGINE",
-    "patterns": ["Hot Hood", "Smoke or Steam", "Thumping Noises", "Reduced Engine Power", "Temperature Gauge is Red"],
-    "responses": ["Check the coolant level and add more coolant if needed\nCheck the engine oil and add more oil if needed\nCheck the radiator:  The radiator consists of a fan and some pipes, The radiator fan fails and sometimes it just runs out of water. You may refill it, and if the fan is not working, then call your mechanic right away."],
-    "context_set": ""
-    },
+        {"tag": "OVERHEATING ENGINE",
+        "patterns": ["burning smell from engine", "smoke or steam coming from the engine", "unusual noises from the engine", "Reduced Engine Power", "temperature gauge is red"],
+        "responses": ["Check the coolant level and add more coolant if needed\nCheck the engine oil and add more oil if needed\nCheck the radiator:  The radiator consists of a fan and some pipes, The radiator fan fails and sometimes it just runs out of water. You may refill it, and if the fan is not working, then call your mechanic right away."],
+        "context_set": ""
+        },
 
-    {"tag": "Engine oil change",
-    "patterns": ["Due for service on the dashboard", "Wear and tear in the engine"],
-    "responses":["Floor jack to lift the vehicle\nOpen draining tank to drain out the oil\nReplace the filter \nRefill the oil according to the qauge"],
-    "context_set": ""
-    },
+        {"tag": "ENGINE OIL SHORTAGE",
+        "patterns": ["the car is consuming too much oil", "dark or dirty oil on the dipstick"],
+        "responses":["Floor jack to lift the vehicle\nOpen draining tank to drain out the oil\nReplace the filter \nRefill the oil according to the qauge"],
+        "context_set": ""
+        },
 
-    {"tag": "Bad Break pad",
-    "patterns": ["Break fluid reservoir", "Break light on dashboard"],
-    "responses": ["Meet an expert to change the break pad"],
-    "context_set": ""
-    }
+        {"tag": "BAD BREAK PAD",
+        "patterns": ["dashboard showing a break warning", "screeching noise when applying brakes"],
+        "responses": ["Meet an expert to change the break pad"],
+        "context_set": ""
+        },
 
+        {"tag": "LOOSE ENGINE BELT",
+        "patterns": ["squeaky belt noise from engine", "belt coming off the pulleys"],
+        "responses":["Meet an expert to replace the belt"],
+        "context_set": ""
+        },
 
-]
+        {"tag": "BLOWN FUSE",
+        "patterns": ["no response from power button", "vechicles accessories not getting power"],
+        "responses":["1. Locate your car's fuse panel. You might need to check the owner's manual\n2. Take off the fuse panel's cover. It is usually on the review cover, will show what system in your car each fuse is assigned to.\n3. Locate the blown fuse. The inside will usually be black or the metal filament might be broken. If it's dark, you might want a flashlight to make this a quicker job."],
+        "context_set": ""
+        },
 
+        {"tag": "FAULTY SHOCK ABSORBER",
+        "patterns": ["steering wheel vibration", "excessive bouncing"],
+        "responses": ["Requires an expert"],
+        "context_set": ""
+        },
+
+        {"tag": "RATTLING SUSPENSION",
+        "patterns": ["suspension feels or unstable"],
+        "responses": ["These can be replaced very easily if you can get under the car. If not then it would be wise to go to the mechanic. "],
+        "context_set": ""
+        },
+
+        {"tag": "FLAT TIRE",
+        "patterns": ["my car is having a flat tire"],
+        "responses":["Slack the wheel nut\nPlace a c caution behind your vehicle\nUse a jack to lift the vehicle up\nUse your spare tyre to replace the flat tyre\nTighten the wheel nuts back on the changed tyre"],
+        "context_set": ""
+        },
+
+        {"tag": "FUEL LEAKAGE",
+        "patterns": ["strong smell of fuel", "rapid decrease in fuel level", "visible fuel stains underneath the car"],
+        "responses":["You can lift the car up on jacks to easily spot and repair the leaks.\nTry to locate a hole or leak in your car's gas tank.\nYou can sand the tank's leaking areas using sandpaper.\nYou can then clean the sanded area thoroughly using the cloth and alcohol or another degreaser.\nTreat the leakage using the gas tank repair kit by following the instructions.\nRefill the gas tank once the repair kit has dried"],
+        "context_set": ""
+        },
+
+        {"tag": "CLOGGED AIR FILTER",
+        "patterns": ["poor gas mileage", "clogs on air filter", "A/C system not cooling effectively"]
+
+        }
+
+        
+    ]
 }
