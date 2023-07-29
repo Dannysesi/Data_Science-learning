@@ -1,2 +1,2 @@
-model_checkpoint_path: "C:\\Users\\Leinad\\Documents\\Tech_Villain\\Leinadpython\\firstaid\\model.hdf5"
-all_model_checkpoint_paths: "C:\\Users\\Leinad\\Documents\\Tech_Villain\\Leinadpython\\firstaid\\model.hdf5"
+model_checkpoint_path: "c:\\Users\\Leinad\\Documents\\Tech_Villain\\Leinadpython\\firstaid\\model.tflearn"
+all_model_checkpoint_paths: "c:\\Users\\Leinad\\Documents\\Tech_Villain\\Leinadpython\\firstaid\\model.tflearn"
