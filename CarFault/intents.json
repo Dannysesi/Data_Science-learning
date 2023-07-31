@@ -48,7 +48,7 @@
         },
 
         {"tag": "RATTLING SUSPENSION",
-        "patterns": ["suspension feels or unstable"],
+        "patterns": ["suspension feels unstable"],
         "responses": ["These can be replaced very easily if you can get under the car. If not then it would be wise to go to the mechanic. "],
         "context_set": ""
         },
