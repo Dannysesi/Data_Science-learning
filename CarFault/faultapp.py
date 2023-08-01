@@ -7,10 +7,18 @@ import numpy
 import tflearn
 import tensorflow as tf
 import random
+import pandas as pd
+import os
 import json
 import pickle
 from tensorflow import keras
 import streamlit as st
+
+st.set_page_config(
+     page_title='AutoMobile Fault Diagnostics System',
+     layout="wide",
+     initial_sidebar_state="expanded",
+)
 
 with open("intents.json") as file:
 	data = json.load(file)
@@ -91,17 +99,26 @@ def bag_of_words(s,words):
 
 	return numpy.array(bag)
 
+def save_feedback_to_csv(feedback_text):
+    feedback_data = {'Feedback': [feedback_text]}
+    feedback_df = pd.DataFrame(feedback_data)
+
+    if not os.path.exists('feedback.csv'):
+        feedback_df.to_csv('feedback.csv', index=False)
+    else:
+        feedback_df.to_csv('feedback.csv', mode='a', header=False, index=False)
+
+
 def chat():
-	unique_key = 0
-	st.title("AutoMobile Fault Diagnotics System")
-	q,r,v = st.columns([1.5,4,1])
+	u,z,k = st.columns([0.8,2,0.5])
+	z.title("AutoMobile Fault Diagnotics System")
+	q,r,v = st.columns([1.5,2,0.5])
 	r.subheader("Your Expert Car Companion")
 	st.write('---')
-	
-	st.write("<span style='font-size: 20px;'>Welcome to the Automobile Fault Diagnostics System!<span>", unsafe_allow_html=True)
-	u, z = st.columns([2,2])
-	u.write("<span style='font-size: 20px;'>Advanced Diagnostics: Say goodbye to the guesswork. Our software utilizes state-of-the-art algorithms and diagnostic tools to pinpoint potential issues accurately. From engine malfunctions to electrical glitches, we've got you covered.<span>", unsafe_allow_html=True)
-	z.write("<span style='font-size: 20px;'>Real-time Insights: Get instant access to crucial data and real-time insights about your car's performance. Monitor vital parameters, receive alerts, and make informed decisions to prevent costly breakdowns.<span>", unsafe_allow_html=True)
+	x, y, n = st.columns([1.3,2,0.5])
+	y.write("<span style='font-size: 20px;'>Welcome to the Automobile Fault Diagnostics System!<span>", unsafe_allow_html=True)
+	w, b = st.columns([2,1])
+	b.write("<span style='font-size: 20px;'>Advanced Diagnostics: Say goodbye to the guesswork. Our software utilizes algorithm and diagnostic prompt to pinpoint potential issues accurately. From engine malfunctions to electrical glitches, we've got you covered.<span>", unsafe_allow_html=True)
 	st.write('---')
 
 	# Initialize chat history
@@ -113,31 +130,30 @@ def chat():
 
 
 	# Accepting user input
-	with st.form("chat_input", clear_on_submit=True):
+	with w.form("chat_input", clear_on_submit=True):
 		a, b = st.columns([4, 1])
-		inp = a.text_input("User_Input: ", key=unique_key, placeholder='Enter Your Car Fault💭', label_visibility="collapsed")
+		inp = a.text_input("User_Input: ", placeholder='Enter Your Car Fault💭', label_visibility="collapsed")
 		match_found = False
-		if inp.strip():
-			pass
-
-        
-
+		
 		results = model.predict([bag_of_words(inp,words)])[0]
 		results_index = numpy.argmax(results)
 		tag = labels[results_index]
 		dail = '+2349025629246'
-		b.form_submit_button("Send", use_container_width=True)
+		if b.form_submit_button("Send", use_container_width=True):
+			if inp.strip():
+				st.stop()
 		st.session_state.messages.append({"role": "user", "content": inp})
 
 		for intent in data["intents"]:
 			for pattern in intent["patterns"]:
 				if inp in pattern:
-					st.markdown(intent["tag"])
+					fg = intent["tag"]
+					st.write(f"this is the most likely fault of your car {fg}")
 					match_found = True
 					break
 
 		if not match_found:
-			st.write('Please enter a vaild automobile issue')
+			st.write("Couldn't pinpoint the exact issue but try the steps below")
 
 		if results[results_index] > 0.5:
 			for tg in data["intents"]:
@@ -157,10 +173,18 @@ def chat():
 	st.write(f'For more information please contact {dail}')
 	st.write('---')
 
+	st.write('Leave us a feedback')
+	feedback = st.text_area("Feedback", placeholder="Type your feedback here...", label_visibility='collapsed')
+	if st.button("Submit Feedback"):
+		save_feedback_to_csv(feedback)
+		st.success("Thank you for your feedback!")
+
+	st.write('---')
+
 	# Display chat messages from history on app rerun
-	for message in st.session_state.messages:
-		with st.chat_message(message["role"]):
-			st.markdown(message["content"])
+	# for message in st.session_state.messages:
+	# 	with st.chat_message(message["role"]):
+	# 		st.markdown(message["content"])
 
 
 if __name__ == '__main__':
