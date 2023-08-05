@@ -123,10 +123,7 @@ def chat():
 		b.form_submit_button("Send", use_container_width=True)
 		st.session_state.messages.append({"role": "user", "content": inp})
 
-		def typewriter_effect(text):
-			for char in text:
-				st.text(char)
-				time.sleep(0.1)
+		
         
 		if results[results_index] > 0.5:
 			for tg in data["intents"]:

@@ -10,6 +10,13 @@ import random
 import json
 import pickle
 import time
+from datetime import date
+
+st.set_page_config(
+     page_title='First Aid ChatBot',
+    #  layout="wide",
+     initial_sidebar_state="expanded",
+)
 
 
 with open("intents.json") as file:
@@ -140,10 +147,13 @@ def chat():
 					z = "Sorry I didn't get that please make a vaild prompt"
 					st.write("Sorry I didn't get that please make a vaild prompt")
 					st.session_state.messages.append({"role": "assistant", "content": z})
-		st.write('---')	
-		st.write(f'For more information please contact {dail}')
 		st.write('---')
-
+		st.write('For more information please contact:')
+		st.markdown('Aviation Medical Clinic, Muritala Muhammad International Airport, Ikeja, Lagos')
+		# st.markdown('Muritala Muhammad International Airport, Ikeja, Lagos')
+		st.markdown(dail)
+		st.info('Please note that First Aid Chatbot Assistant is designed to provide immediate assistance and guidance in emergency situations. However, it is not a substitute for professional medical advice or treatment. Always seek medical attention for serious injuries or conditions.', icon="ℹ️")
+		st.write('---')
 		st.subheader('Chat History')
 		st.write('---')
 		# Display chat messages from history on app rerun
