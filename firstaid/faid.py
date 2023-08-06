@@ -116,8 +116,8 @@ def chat():
 	if "messages" not in st.session_state:
 		st.session_state.messages = []
 
-	tab1, tab2 = st.tabs(['ChatBot', 'About'])
-	with tab1:
+	tab1, tab2 = st.tabs(['About', 'ChatBot'])
+	with tab2:
 	# Accepting user input
 		with st.form("chat_input", clear_on_submit=True):
 			a, b = st.columns([4, 1])
@@ -161,7 +161,7 @@ def chat():
 			with st.chat_message(message["role"]):
 				st.markdown(message["content"])
 
-	with tab2:
+	with tab1:
 		st.subheader('About First Aid Chatbot')
 		st.write('---')
 
