@@ -155,8 +155,6 @@ def chat():
         			match_found = True
         			break   
 
-        # if not match_found:
-        # 	st.write("Couldn't pinpoint the exact issue but try the steps below")
 
         if results[results_index] > 0.5:
         	for tg in data["intents"]:
