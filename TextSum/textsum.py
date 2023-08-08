@@ -17,18 +17,23 @@ def summarize_text(model, tokenizer, text, max_length=200, min_length=100):
     return summary
 
 def main():
-    st.title("Text Summarization System")
+    x, e, v = st.columns([0.15,1,0.1])
+    e.title("Text Summarization System")
+    st.subheader("Elevate Understanding, Embrace Efficiency")
+    st.subheader("Text Summarization at Your Fingertips!")
+    st.write('---')
 
     model, tokenizer = load_model()  # Load the model only once
 
     # Input text
-    input_text = st.text_area("Enter your text here:", height=300)
+    input_text = st.text_area(" ",placeholder="Enter your text here", height=300)
+    st.write('---')
 
     if st.button("Summarize"):
         progress_text = "Operation in progress. Please wait."
         my_bar = st.progress(0, text=progress_text)
 
-        duration = random.uniform(27, 33)
+        duration = random.uniform(60, 90)
 
         # Number of steps in the progress bar
         steps = 100
