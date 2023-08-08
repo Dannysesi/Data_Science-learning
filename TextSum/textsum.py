@@ -10,14 +10,14 @@ def load_model():
     model = PegasusForConditionalGeneration.from_pretrained(model_name)
     return model, tokenizer
 
-def summarize_text(model, tokenizer, text, max_length=150, min_length=50):
-    inputs = tokenizer(text, return_tensors="pt", max_length=max_length, min_length=min_length, truncation=True)
-    summary_ids = model.generate(inputs.input_ids, num_beams=4, max_length=150, min_length=50, early_stopping=True)
+def summarize_text(model, tokenizer, text, max_length=200, min_length=100):
+    inputs = tokenizer(text, return_tensors="pt", padding="longest", truncation=True)
+    summary_ids = model.generate(inputs.input_ids, num_beams=4, max_length=200, min_length=100, early_stopping=True)
     summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
     return summary
 
 def main():
-    st.title("Text Summarizer with PEGASUS")
+    st.title("Text Summarization System")
 
     model, tokenizer = load_model()  # Load the model only once
 
