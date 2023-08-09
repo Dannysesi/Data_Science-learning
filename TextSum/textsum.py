@@ -19,8 +19,10 @@ def summarize_text(model, tokenizer, text, max_length=200, min_length=100):
 def main():
     x, e, v = st.columns([0.15,1,0.1])
     e.title("Text Summarization System")
-    st.subheader("Elevate Understanding, Embrace Efficiency")
-    st.subheader("Text Summarization at Your Fingertips!")
+    z, u, p = st.columns([0.18,1,0.1])
+    u.subheader("Elevate Understanding, Embrace Efficiency")
+    q, h, j = st.columns([0.2,1,0.1])
+    h.subheader("Text Summarization at Your Fingertips!")
     st.write('---')
 
     model, tokenizer = load_model()  # Load the model only once
@@ -33,7 +35,7 @@ def main():
         progress_text = "Operation in progress. Please wait."
         my_bar = st.progress(0, text=progress_text)
 
-        duration = random.uniform(60, 90)
+        duration = random.uniform(70, 120)
 
         # Number of steps in the progress bar
         steps = 100
