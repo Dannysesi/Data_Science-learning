@@ -3,6 +3,11 @@ from transformers import PegasusForConditionalGeneration, PegasusTokenizer
 import time
 import random
 
+st.set_page_config(
+     page_title='Text Summarization System',
+     initial_sidebar_state="expanded",
+)
+
 @st.cache_resource
 def load_model():
     model_name = "google/pegasus-xsum"
@@ -17,11 +22,11 @@ def summarize_text(model, tokenizer, text, max_length=200, min_length=100):
     return summary
 
 def main():
-    x, e, v = st.columns([0.15,1,0.1])
+    x, e, v = st.columns([0.19,2,0.1])
     e.title("Text Summarization System")
-    z, u, p = st.columns([0.18,1,0.1])
+    z, u, p = st.columns([0.15,1.5,0.1])
     u.subheader("Elevate Understanding, Embrace Efficiency")
-    q, h, j = st.columns([0.2,1,0.1])
+    q, h, j = st.columns([0.3,2,0.1])
     h.subheader("Text Summarization at Your Fingertips!")
     st.write('---')
 
