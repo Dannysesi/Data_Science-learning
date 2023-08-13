@@ -41,31 +41,19 @@ def medv_con(a):
 def convert(a):
     return a * 459.5
 
+q, x, p = st.columns([0.5,2,0.5])
 # Create the Streamlit app
-st.title('Leinad Real Estate👷‍♂️👷‍♂️👷‍♂️')
-st.header('House Price Prediction System💻')
+x.title('Leinad Real Estate👷‍♂️')
+w, k, f = st.columns([0.2,2,0.2])
+k.header('House Price Prediction System💻')
+st.write('---')
 st.write('---')
 
-# st.markdown(
-#     f"""
-#     <style>
-#     .stApp {
-#         background-image: url('ddy.jpg');
-#     }
-#     </style>
-#     """,
-#     unsafe_allow_html=True
-# )
 
-# sidebar
-# st.sidebar.header("Specify Input Parameters")
-
-# Add input widgets for the user to enter the input features
-# with st.sidebar:
 a, b, c, d = st.columns([4, 4, 4, 4])
 crim = a.number_input('Crime rate', min_value=0.0, max_value=100.0,  step=1.0)
 zn = b.number_input('Land size per plot', min_value=0.0, max_value=100.0,  step=1.0)
-indus = c.number_input('Avg no. of Bathrooms', min_value=0.0, max_value=30.0,  step=1.0)
+indus = c.number_input('Non-retail business', min_value=0.0, max_value=30.0,  step=1.0)
 chas = d.selectbox('Charles River', [0, 1])
 i, j = st.columns([4,4])
 nox = i.slider('Air condition', min_value=0.0, max_value=1.0, value=0.0, step=0.01)
@@ -73,12 +61,12 @@ rm = j.slider('Avg no. of Bedrooms', min_value=0.0, max_value=10.0, value=0.0, s
 age = st.number_input('Home condition', min_value=0.0, max_value=100.0, value=0.0, step=0.1)
 u, v = st.columns([4,4])
 dis = u.slider('Distance to employment centers', min_value=0.0, max_value=15.0, value=0.0, step=0.01)
-rad = v.slider('Acces to federal roads', min_value=0.0, max_value=30.0, value=0.0, step=1.0)
+rad = v.slider('Access to federal roads', min_value=0.0, max_value=30.0, value=0.0, step=1.0)
 m, n = st.columns([6,6])
 tax = m.number_input('Property tax', min_value=0.0, max_value=750.0, value=0.0, step=1.0)
 ptratio = n.slider('Pupil-teacher ratio by town', min_value=0.0, max_value=25.0, value=0.0, step=1.0)
 q, r = st.columns([4,4])
-b = q.number_input('B', min_value=0.0, max_value=400.0, value=0.0, step=1.0)
+b = q.number_input('proportion of black people by town', min_value=0.0, max_value=400.0, value=0.0, step=1.0)
 lstat = r.slider('% lower status of the population', min_value=0.0, max_value=40.0, value=0.0, step=0.5)
 
 # When the user clicks the "Predict" button, make a prediction
@@ -93,6 +81,7 @@ if col2.button('Predict'):
     st.write(features)
     # Make a prediction
     prediction = predict_price(input_data)
+    st.write('---')
     
     # Display the prediction to the user
     st.write('---')
@@ -102,25 +91,17 @@ if col2.button('Predict'):
         unsafe_allow_html=True)
     st.write('---')
     
+    with st.expander('Feature Importance'):
+        explainer = shap.TreeExplainer(model)
+        shap_values = explainer.shap_values(X)
 
-    explainer = shap.TreeExplainer(model)
-    shap_values = explainer.shap_values(X)
+        st.header('Feature Importance')
+        plt.title('Feature importance based on SHAP values')
+        fig, ax = plt.subplots()
+        shap.summary_plot(shap_values, X)
+        st.pyplot(fig)
 
-    # st.header('Feature Importance')
-    # # plt.title('Feature importance based on SHAP values')
-    
-
-    # # plt.title('Feature importance based on SHAP values (Bar)')
-    # shap.summary_plot(shap_values, X, plot_type="bar")
-    # fig = plt.gcf()
-    # st.pyplot(fig, bbox_inches='tight')
-    st.header('Feature Importance')
-    plt.title('Feature importance based on SHAP values')
-    fig, ax = plt.subplots()
-    shap.summary_plot(shap_values, X)
-    st.pyplot(fig)
-
-    plt.title('Feature importance based on SHAP values (Bar)')
-    fig, ax = plt.subplots()
-    shap.summary_plot(shap_values, X, plot_type='bar')
-    st.pyplot(fig)
+        plt.title('Feature importance based on SHAP values (Bar)')
+        fig, ax = plt.subplots()
+        shap.summary_plot(shap_values, X, plot_type='bar')
+        st.pyplot(fig)
