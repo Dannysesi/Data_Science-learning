@@ -41,6 +41,7 @@ with open("intents.json") as file:
 	words = [stemmer.stem(w.lower()) for w in words if w != "?"]
 	words = sorted(list(set(words)))
 
+
 	labels = sorted(labels)
 
 
