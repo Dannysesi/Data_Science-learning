@@ -9,7 +9,7 @@ import pandas as pd
 df = pd.read_csv('Data.csv')
 
 # importing already trained model
-with open('model3.pkl', 'rb') as f:
+with open('model3.pkle', 'rb') as f:
     model = pickle.load(f)
 
 def preprocess_input(inputs):
