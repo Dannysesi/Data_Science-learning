@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automobile Fault Diagnosis System</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automobile Fault Diagnosis System</h1>
+        <form id="fault-diagnosis-form">
+            <label for="vehicle-make">Vehicle Make:</label>
+            <input type="text" id="vehicle-make" required>
+            <label for="vehicle-model">Vehicle Model:</label>
+            <input type="text" id="vehicle-model" required>
+            <label for="fault-description">Fault Description:</label>
+            <textarea id="fault-description" required></textarea>
+            <button type="submit">Diagnose</button>
+        </form>
+        <div id="diagnosis-result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

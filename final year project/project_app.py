@@ -51,7 +51,7 @@ st.write('---')
 
 
 a, b, c, d = st.columns([4, 4, 4, 4])
-crim = a.number_input('Crime rate', min_value=0.0, max_value=100.0,  step=1.0)
+crim = a.number_input('Crime rate.', min_value=0.0, max_value=100.0,  step=1.0)
 zn = b.number_input('Land size per plot', min_value=0.0, max_value=100.0,  step=1.0)
 indus = c.number_input('Non-retail business', min_value=0.0, max_value=30.0,  step=1.0)
 chas = d.selectbox('Charles River', [0, 1])
