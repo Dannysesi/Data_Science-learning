@@ -111,12 +111,12 @@ def chat():
             feedback_df.to_csv('feedback.csv', mode='a', header=False, index=False)
 
     u,z,k = st.columns([0.8,2,0.5])
-    z.title("AutoMobile Fault Diagnotics System")
+    z.title("AutoMobile Fault Diagnostic System")
     q,r,v = st.columns([1.5,2,0.5])
     r.subheader("Your Expert Car Companion")
     st.write('---')
     x, y, n = st.columns([1.3,2,0.5])
-    y.write("<span style='font-size: 20px;'>Welcome to the Automobile Fault Diagnostics System!<span>", unsafe_allow_html=True)
+    y.write("<span style='font-size: 20px;'>Welcome to the Automobile Fault Diagnostic System!<span>", unsafe_allow_html=True)
     col5, col6, col7 = st.columns([4.6,4,2.5])
     col6.write("<span style='font-size: 20px;'>Say goodbye to the guesswork<span>", unsafe_allow_html=True)
     # st.write("<span style='font-size: 20px;'>Our software utilizes algorithm and diagnostic prompt to pinpoint potential issues accurately. From engine malfunctions to electrical glitches, we've got you covered.<span>", unsafe_allow_html=True)
@@ -171,7 +171,7 @@ def chat():
         	st.write("Sorry I didn't get that please make a vaild prompt")
         	st.session_state.messages.append({"role": "assistant", "content": z})
     st.write('---')	
-    dail = '+2349025629246'
+    dail = '+2349011820966'
     st.write(f'For more information please contact {dail}')
     st.write('---') 
     st.write('Leave us a feedback')
