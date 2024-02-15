@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:20px;
+            font-size: larger;
+            font-family: cursive;
+            /* margin: 10px; */
+            /* border-radius: 10px; */
+            margin-bottom: 50px;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-item {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        .nav-item:hover {
+            background-color: #555;
+        }
+
+        .search-bar {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            width: 80%;
+            padding-right: 20px;
+        }
+
+        .form-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form {
+            text-align: center;
+            max-width: 300px;
+            width: 100%;
+        }
+
+        .form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0;
+            flex-shrink: 0;
+            margin-top: auto;
+            margin-top: 5em;
+            padding: 30px 30px 20px 30px;
+            /* margin-bottom: -1000px; */
+        }
+
+        .footer-section.about {
+            max-width: 500px; /* Set the maximum width */
+            max-height: 200px; /* Set the maximum height */
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+
+        .footer-section {
+            margin-bottom: 30px;
+        }
+
+        .footer-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .contact span {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact i {
+            margin-right: 5px;
+        }
+
+        .social a {
+            display: inline-block;
+            font-size: 20px;
+            margin-right: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .quick-links ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .quick-links li {
+            margin-bottom: 10px;
+        }
+
+        .quick-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 80%;
+            padding: 10px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            border: 1px solid #777;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .contact-form button {
+            background-color: #777;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        main {
+            background-position: center;
+            background-size: cover;
+            margin: 30px;
+            height: 750px;
+        }
+        .menu-button {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .navbar-left, .navbar-right {
+                text-align: center;
+                width: 100%;
+            }
+
+            .navbar-left, .navbar-right, .search-bar {
+                margin: 10px 0;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .navbar-left, .navbar-right {
+                display: none;
+            }
+
+            .navbar.active .navbar-left, .navbar.active .navbar-right {
+                display: block;
+            }
+        }
+
+
+    </style>
+    <title>Responsive Navbar</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="#" class="nav-item">Home</a>
+                <a href="#" class="nav-item">Books</a>
+                <a href="#" class="nav-item">Purchase</a>
+                <a href="#" class="nav-item" onclick="showLoginForm()">Login</a>
+                <a href="#" class="nav-item" onclick="showRegisterForm()">Register</a>
+            </div>
+            <div class="navbar-right">
+                <input type="text" class="search-bar" placeholder="Search">
+            </div>
+            <div class="menu-button" id="menu-button">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+        <div class="form-container" id="login-form-container">
+            <form class="form" id="login-form">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="login-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+        
+        <div class="form-container" id="register-form-container">
+            <form class="form" id="register-form">
+                <h2>Register</h2>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="register-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia explicabo maxime, officia optio dolore accusantium earum voluptatem itaque nihil unde nam ea magnam quaerat obcaecati maiores laudantium voluptatum autem vel necessitatibus modi et iure! Quis odit sunt provident odio hic nostrum deleniti numquam. Facere dignissimos possimus saepe ad, cumque nisi!</p>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>BookHaven is a comprehensive platform for authors to showcase and sell their literary works, and for readers to discover, purchase, and engage with a diverse range of books.</p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i> (123) 456-7890</span>
+                    <span><i class="fas fa-envelope"></i> info@example.com</span>
+                </div>
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section quick-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-form">
+                <h2>Contact Us</h2>
+                <form>
+                    <input type="email" name="email" class="text-input" placeholder="Your email address">
+                    <textarea name="message" class="text-input" placeholder="Your message"></textarea>
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 Book Haven. All rights reserved.
+        </div>
+    </footer>
+    
+    
+    <script>
+        const toggleButton = document.getElementById('toggle-button');
+        const navItems = document.getElementById('nav-items');
+
+        toggleButton.addEventListener('click', () => {
+            navItems.classList.toggle('active');
+        });
+
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+
+        searchButton.addEventListener('click', () => {
+            const searchTerm = searchInput.value;
+        });
+
+        function showLoginForm() {
+        const loginFormContainer = document.getElementById('login-form-container');
+        const registerFormContainer = document.getElementById('register-form-container');
+
+            loginFormContainer.style.display = 'flex';
+            registerFormContainer.style.display = 'none';
+        }
+
+        function showRegisterForm() {
+            const loginFormContainer = document.getElementById('login-form-container');
+            const registerFormContainer = document.getElementById('register-form-container');
+
+            loginFormContainer.style.display = 'none';
+            registerFormContainer.style.display = 'flex';
+        }
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('active');
+            } else {
+                navbar.classList.remove('active');
+            }
+        });
+
+        document.getElementById('menu-button').addEventListener('click', function() {
+            document.getElementById('navbar').classList.toggle('active');
+        });
+
+    </script>
+</body>
+</html>
